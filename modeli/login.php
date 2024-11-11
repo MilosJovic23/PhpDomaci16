@@ -27,7 +27,7 @@
 
         if ( password_verify($password, $user['sifra']) ){
             echo "you are logged in";
-//            die('<a href="../index.php">Go to products page</a>');
+            die('<a href="../products.php">Go to products page</a>');
         } else {
             echo "wrong password";
             die('<a href="../index.php">Try again</a>');

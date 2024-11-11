@@ -24,9 +24,22 @@
     </head>
     <body>
         <main class="productsPage">
-
             <div class="container">
-                <h1>test</h1>
+                <form method="GET" action="modeli/search.php">
+                    <input type="text" name="search" placeholder="unesite rec za pretragu" required>
+                    <button type="submit" class="button">Pretrazi proizvod</button>
+                </form>
+            </div>
+            <div class="container">
+                <form method="GET" action="modeli/addProduct.php">
+                    <input type="text" name="ime" placeholder="ime">
+                    <input type="text" name="opis" placeholder="opis">
+                    <input type="number" name="cena" placeholder="cena">
+                    <input type="number" name="kolicina" placeholder="kolicina">
+                    <button class="button">dodaj proizvod</button>
+                </form>
+
+
             </div>
             <div class="container">
 
