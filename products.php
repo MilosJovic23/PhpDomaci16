@@ -3,18 +3,11 @@
     require_once "modeli/baza.php";
 
 
-
     $result = $baza->query("SELECT * FROM proizvodi");
 
-
     if ($result->num_rows > 0) {
-
         $products =  $result->fetch_all(MYSQLI_ASSOC);
-
     }
-
-
-
 
 
 
@@ -33,7 +26,9 @@
         <main class="productsPage">
 
             <div class="container">
-
+                <h1>test</h1>
+            </div>
+            <div class="container">
 
                 <?php foreach ( $products as $key => $product ): ?>
                     <div class="product">
