@@ -12,7 +12,9 @@
         <title>Login page</title>
     </head>
     <body>
+
         <main class="loginForm">
+
             <div class="container">
                 <form action="modeli/login.php" method="POST" class="form" >
                     <input type="email" placeholder="email" name="email" required>
@@ -23,8 +25,9 @@
                     <p>Don't have account?</p>
                     <a href="registerForm.php">Register</a>
                 </div>
-
             </div>
+
         </main>
+
     </body>
 </html>
