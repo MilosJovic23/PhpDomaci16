@@ -11,7 +11,7 @@
         die("you didnt passed the password");
     }
 
-    $_SESSION['logged'] = false;
+    $_SESSION['loggedIn'] = false;
     $email = $_POST["email"];
     $password = $_POST["password"];
 
@@ -28,7 +28,7 @@
         if ( password_verify($password, $user['sifra']) ){
             if( session_status() == PHP_SESSION_NONE ){
                 session_start();
-                $_SESSION['logged'] = true;
+                $_SESSION['loggedIn'] = true;
             }
            header("Location:../products.php");
         } else {

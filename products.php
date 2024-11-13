@@ -35,7 +35,7 @@
             <nav >
                 <ul class="navigation">
                     <a href="products.php"><li>Glavna</li></a>
-                    <?php if( isset($_SESSION["logged"])):  ?>
+                    <?php if( isset($_SESSION["loggedIn"])):  ?>
                     <a href="modeli/logout.php"><li>logout</li></a>
                     <?php else: ?>
                     <a href="index.php"><li>login</li></a>

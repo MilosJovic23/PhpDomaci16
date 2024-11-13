@@ -8,7 +8,7 @@
     }
 
 
-    $_SESSION['logged'] = false;
+    $_SESSION['loggedIn'] = false;
 
     session_destroy();
 
