@@ -11,13 +11,13 @@
         die("you didnt passed the password");
     }
 
-
+    $_SESSION['logged'] = false;
     $email = $_POST["email"];
     $password = $_POST["password"];
 
     $result = $baza->query("SELECT * FROM korisnici WHERE email = '$email'");
 
-//    var_dump($result);
+
 
     if( $result->num_rows == 0 ){
         die("account with this email does not exist");
@@ -26,8 +26,11 @@
         $user = $result->fetch_assoc();
 
         if ( password_verify($password, $user['sifra']) ){
-            echo "you are logged in";
-            die('<a href="../products.php">Go to products page</a>');
+            if( session_status() == PHP_SESSION_NONE ){
+                session_start();
+                $_SESSION['logged'] = true;
+            }
+           header("Location:../products.php");
         } else {
             echo "wrong password";
             die('<a href="../index.php">Try again</a>');
