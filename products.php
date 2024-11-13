@@ -3,11 +3,18 @@
     require_once "modeli/baza.php";
 
 
+
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+
+    }
+
     $result = $baza->query("SELECT * FROM proizvodi");
 
     if ($result->num_rows > 0) {
         $products =  $result->fetch_all(MYSQLI_ASSOC);
     }
+
 
 
 
@@ -23,7 +30,19 @@
         <title>Document</title>
     </head>
     <body>
+
         <main class="productsPage">
+            <nav >
+                <ul class="navigation">
+                    <a href="products.php"><li>Glavna</li></a>
+                    <?php if( isset($_SESSION["logged"])):  ?>
+                    <a href="modeli/logout.php"><li>logout</li></a>
+                    <?php else: ?>
+                    <a href="index.php"><li>login</li></a>
+                    <?php endif; ?>
+
+                </ul>
+            </nav>
             <div class="container">
                 <form method="GET" action="modeli/search.php">
                     <input type="text" name="search" placeholder="unesite rec za pretragu" required>
@@ -47,9 +66,9 @@
                     <div class="product">
                         <h3><?=  $product["ime"]; ?></h3>
                         <p><?=  $product["opis"]; ?></p>
-                        <p>cena: <?=  $product["cena"]; ?> &dollar;</p>
+                        <p>cena: <?=  $product["cena"]; ?>&dollar;</p>
                         <p>kolicina: <?=  $product["kolicina"] > 0 ? $product["kolicina"] : "nema na stanju" ; ?> </p>
-                        <a href="singleProduct.php?id=<?= $product["id"] ?>">pogledaj proizvod</a>
+                        <a class="aButton" href="singleProduct.php?id=<?= $product["id"] ?>">pogledaj proizvod</a>
                     </div>
                 <?php endforeach; ?>
 
