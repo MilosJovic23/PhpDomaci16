@@ -3,6 +3,12 @@
     margin:0;
     padding: 0;
 }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     background-color: #ffffff;
     margin:0 auto;
@@ -30,8 +36,14 @@
     gap:2px;
 }
 
+.navigation{
+    display: flex;
+    gap:10px;
+}
 
-a{
+
+
+.aButton{
 
     box-sizing: border-box;
     text-decoration: none;
