@@ -32,8 +32,10 @@
                     <a href="products.php"><li>Glavna</li></a>
                     <?php if( isset($_SESSION["loggedIn"])):  ?>
                     <a href="modeli/logout.php"><li>logout</li></a>
+                    <a href="KorpaPrikaz.php"><li>Korpa</li></a>
                     <?php else: ?>
                     <a href="index.php"><li>login</li></a>
+
                     <?php endif; ?>
 
                 </ul>
