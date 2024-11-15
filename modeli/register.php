@@ -12,6 +12,11 @@
 
     $email = $_POST["email"];
     $password = password_hash($_POST["password"], PASSWORD_BCRYPT);
+
+    $password = $baza->real_escape_string($password);
+    $email = $baza->real_escape_string($email);
+
+
     $registration = false;
 
     $result = $baza->query("SELECT * FROM korisnici WHERE email = '$email'");

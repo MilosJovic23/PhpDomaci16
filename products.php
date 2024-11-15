@@ -3,10 +3,8 @@
     require_once "modeli/baza.php";
 
 
-
     if (session_status() == PHP_SESSION_NONE) {
         session_start();
-
     }
 
     $result = $baza->query("SELECT * FROM proizvodi");
@@ -14,9 +12,6 @@
     if ($result->num_rows > 0) {
         $products =  $result->fetch_all(MYSQLI_ASSOC);
     }
-
-
-
 
 ?>
 
@@ -32,7 +27,7 @@
     <body>
 
         <main class="productsPage">
-            <nav >
+            <nav class="navContainer">
                 <ul class="navigation">
                     <a href="products.php"><li>Glavna</li></a>
                     <?php if( isset($_SESSION["loggedIn"])):  ?>

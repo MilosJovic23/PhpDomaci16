@@ -7,11 +7,11 @@
 
     $searchTerm = $_GET["search"];
 
+    $searchTerm = $baza->real_escape_string($searchTerm);
 
 
     $result = $baza->query("SELECT * FROM proizvodi WHERE ime LIKE '%$searchTerm%' OR opis LIKE '%$searchTerm%'");
 
-    var_dump($result);
 
     if( $result->num_rows > 0 ){
         $searchResult = $result->fetch_all(MYSQLI_ASSOC);
@@ -20,7 +20,7 @@
         die("nismo pronasli porizvod sa unetom pretragom");
     }
 
-    var_dump($searchResult);
+
     echo '<a href="../products.php">Go to products page</a>';
 
 ?>
