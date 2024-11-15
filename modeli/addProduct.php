@@ -29,7 +29,12 @@
     $kolicina = $_GET["kolicina"];
 
 
-    var_dump($_GET);
+    $ime = $baza -> real_escape_string( $ime );
+    $opis = $baza -> real_escape_string( $opis );
+    $cena = $baza -> real_escape_string( $cena );
+    $kolicina = $baza -> real_escape_string( $kolicina );
+
+
 
     $baza->query("INSERT INTO proizvodi(ime,opis,cena,kolicina) VALUES('$ime','$opis','$cena','$kolicina')");
     echo "uspesno ste dodali proizvod";
