@@ -15,6 +15,11 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
 
+
+
+    $email = $baza->real_escape_string( $email );
+    $password = $baza->real_escape_string( $password );
+
     $result = $baza->query("SELECT * FROM korisnici WHERE email = '$email'");
 
 
@@ -29,6 +34,7 @@
             if( session_status() == PHP_SESSION_NONE ){
                 session_start();
                 $_SESSION['loggedIn'] = true;
+                $_SESSION['user_id'] = $user["id"];;
             }
            header("Location:../products.php");
         } else {
