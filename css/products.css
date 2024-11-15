@@ -22,7 +22,6 @@ ul {
 .productsPage {
     background-color: #eeecea;
     height: 100vh;
-    display: flex;
     flex-direction: column;
     align-items: center;
 
@@ -39,9 +38,24 @@ ul {
 .navigation{
     display: flex;
     gap:10px;
+    padding: 2rem 0;
+    margin:0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
+.navContainer{
+    background-color: #08081e;
 
-
+}
+.navigation a {
+    text-decoration: none;
+    color: #e3e4e5;
+    font-size: 1.4rem;
+}
+.navigation a:hover{
+    opacity: 80%;
+}
 
 .aButton{
 
@@ -79,5 +93,11 @@ button {
     border-radius: 4px;
     cursor: pointer;
     color:white;
-    background-image: linear-gradient(120deg, #fadb47 0%, #b98d17 100%);
+    background-image: linear-gradient(120deg, #3a3835 0%, #181712 100%);
+}
+.button :hover{
+    opacity: 20%;
+}
+a{
+    text-decoration: none;
 }
